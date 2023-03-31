@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puffencia</title>
+	<style>
+
+		body {
+			background-color: #ECEFF1;
+			font-family: Arial, sans-serif;
+		}
+		
+		header {
+			background-color: #4682B4;
+			border-radius: 1000% 1000% 20% 20%;
+			padding: 10px;
+			text-align: center;
+		}
+		
+		h1 {
+			margin: 0;
+			font-size: 48px;
+			color: #FFFFFF;
+			text-shadow: 2px 2px #1976D2;
+		}
+		
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+		}
+		
+		nav li {
+			margin: 0 20px;
+		}
+		
+		nav a {
+			text-decoration: none;
+			font-size: 24px;
+			color: #4E89CF;
+			text-shadow: 1px 1px #FFFFFF;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		nav a:hover {
+			color: #FFFFFF;
+			text-shadow: 2px 2px #1976D2;
+		}
+		
+		main {
+			padding: 40px;
+			display: flex;
+			justify-content: space-around;
+		}
+		
+		section {
+			background-color: #FFFFFF;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 5px 5px 5px #CFD8DC;
+			text-align: center;
+			max-width: 300px;
+			display: none;
+		}
+		
+		h2 {
+			font-size: 36px;
+			color: #4682B4;
+			text-shadow: 1px 1px #FFFFFF;
+			margin-bottom: 20px;
+		}
+		
+		img {
+			max-width: 100%;
+			margin-bottom: 20px;
+		}
+		/*police et taille du contact + texte description produit*/
+		p {
+			font-size: 18px;
+			color: #546E7A;
+			line-height: 1.5;
+			margin: 0 0 20px 0;
+		}
+		
+		footer {
+			background-color: #4682B4;
+			height: 60px;
+            border-radius: 100 100 0px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			padding: 5px;
+			text-align: center;
+			color: #696969;
+			text-shadow: 1px 1px #1976D2;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+		
+		a {
+			color: #FFFFFF;
+			text-shadow: 1px 1px #1976D2;
+		}
+		
+    /* Styles pour la page produit */
+.product-page {
+	display: none;
+	background-color: #FFFFFF;
+	padding: 40px;
+	text-align: center;
+}
+
+.product-page h2 {
+	color: #4682B4;
+	text-shadow: 1px 1px #FFFFFF;
+	margin-bottom: 20px;
+}
+
+.product-page img {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+.product-page p {
+	font-size: 18px;
+	color: #546E7A;
+	line-height: 1.5;
+	margin: 0 0 20px 0;
+}
+
+/* Styles pour l'onglet actif */
+.active {
+	background-color: #4682B4;
+	color: #FFFFFF;
+	text-shadow: 1px 1px #1976D2;
+}
+
+/* Styles pour les onglets */
+.produit1 {
+  background-color: #8395A3; /* Couleur de fond par défaut */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 10px 10px 0 0; /* Bords arrondis en haut */
+  padding: 10px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur de souris en forme de main */
+}
+
+/* Styles pour les onglets survolés */
+.produit1:hover {
+  background-color: #ccc; /* Couleur de fond gris clair au survol */
+}
+
+/* Styles pour les onglets actifs */
+.produit1.active {
+  background-color: #fff; /* Couleur de fond blanche pour l'onglet actif */
+  border-bottom: none; /* Pas de bordure en bas pour l'onglet actif */
+  border-radius: 10px 10px 0 0; /* Bords arrondis en haut pour l'onglet actif */
+}
+
+/* Styles pour les descriptions des produits */
+.produit1-description {
+  background-color: #fff; /* Couleur de fond blanche */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-top: none; /* Pas de bordure en haut */
+  padding: 20px; /* Espacement intérieur */
+  display: none; /* Cacher la description par défaut */
+}
+
+/* Styles pour le footer */
+footer ul {
+	margin: 5;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+footer li {
+	margin: 0 40px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #FFFFFF;
+	text-shadow: 1px 1px #1976D2;
+}
+
+ /* styles CSS pour l'image de logo Lydia */
+      img.lydia-logo {
+        width: 20px;
+        height: 20px;
+        margin-left: 0px;
+      }
+/* styles CSS pour l'image de logo espece */
+      img.espece-logo {
+        width: 20px;
+        border-radius: 100 100 100px 100px;
+        height: 20px;
+        margin-left: 0px;
+        border-radius: 30%;
+      }
+/* styles CSS pour l'image de logo virement */
+      img.virement-logo {
+        width: 30px;
+        height: 20px;
+        margin-left: 0px;
+        border-radius: 10%;
+      }
+/* styles CSS pour l'image de logo insta */
+      img.insta-logo {
+        width: 20px;
+        height: 20px;
+        margin-left: 0px;
+      }
+/* styles CSS pour l'image de logo snap */
+      img.snap-logo {
+        width: 20px;
+        height: 20px;
+        margin-left: 0px;
+        border-radius: 30%;
+      }      
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Puffencia</h1>
+		<nav>
+			<ul>
+				<li><a href="#" class="tablinks active" onclick="openProduct(event, 'product1')">Puff Fruits Rouges</a></li>
+				<li><a href="#" class="tablinks" onclick="openProduct(event, 'product2')">Puff Litchi </a></li>
+				<li><a href="#" class="tablinks" onclick="openProduct(event, 'product3')">Puff Raisin </a></li>
+				<li><a href="#" class="tablinks" onclick="openProduct(event, 'product4')">Puff Mangue </a></li>
+				<li><a href="#" class="tablinks" onclick="openProduct(event, 'livraison')">Livraison soirée</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="product1" class="product">
+			<h2>Puff Fruits Rouges</h2>
+			<img src="https://www.levapoteur-discount.fr/19835-large_default/puff-fruits-rouges-wpuff-liquideo.jpg" alt="Produit 1">
+			<p>Un classique indémodable qui saura vous plaire et plaire à vos amis. </p>
+		</section>
+		
+		<section id="product2" class="product">
+			<h2>Puff Litchi Glace</h2>
+			<img src="https://www.cdiscount.com/pdt2/8/1/6/1/700x700/liq3665794142816/rw/wpuff-litchi-glace-600-puffs-sans-tabac-sans.jpg" alt="Produit 2">
+			<p>Ce goût oriental est parfait pour vous rapeller les saveurs d'asie et vous faire voyager tout en étant en soirée. </p>
+		</section>
+		
+		<section id="product3" class="product">
+			<h2>Raisin glace</h2>
+			<img src="https://www.cdiscount.com/pdt2/6/3/2/1/700x700/liq3665794142632/rw/wpuff-raisin-glace-600-puffs-sans-tabac-sans.jpg" alt="Produit 3">
+			<p>Puff gout raisin peut accompagner parfaitement vos dinners d'affaire et vos dinners entre potes </p>
+		</section>
+
+		<section id="product4" class="product">
+			<h2>Mangue glacée</h2>
+			<img src="https://www.e-vape.fr/65024-large_default/puff-mangue-glacee-wpuff-600-liquideo.jpg" alt="Produit 3">
+			<p>Puff gout Mangue est parfaite pour acompagner une soirée chill avec un grand verre d'oasis. C'est le retour vers l'exotisme sans bouger de chez vous </p>
+		</section>
+		
+		<section id="livraison" class="product-page">
+			<h2>Livraison soiree</h2>
+			<img src="https://www.narguiluxe.com/wp-content/uploads/2022/07/magnum-wpuff-2000-puffs.jpg" alt="Livraison soirée">
+		<p>Pour 5 Puff achetées nous offrons également la livraison  pour vos soirées festives! Notre service de livraison soirée est disponible tous les vendredis et samedis soirs de 20h à 2h du matin. Profitez de nos produits pour rendre votre soirée encore plus agréable!</p>
+	</section>
+</main>
+
+<footer>
+	<ul>
+		<li><a href="#">Lydia</a></li> <img class="lydia-logo" src="https://files.helpdocs.io/zqc32mkmew/logo.png?t=1608128023138"> 
+		<li><a href="#">Especes</a></li> <img class ="espece-logo" src="https://static.vecteezy.com/ti/vecteur-libre/p1/4853485-pieces-argent-cash-richesse-paiement-ligne-icon-vector-illustration-logo-template-adapte-a-plusieurs-usages-gratuit-vectoriel.jpg">
+		<li><a href="#">Virements</a></li> <img class="virement-logo" src="https://upload.wikimedia.org/wikipedia/fr/7/72/Logo_GIE-CB.jpg">
+	</ul>
+	<ul>
+		<li><a href="#">@Puffencia</a></li> <img class="insta-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png">
+		<li><a href="#">@Puffencia </a></li> <img class="snap-logo" src="https://upload.wikimedia.org/wikipedia/fr/archive/a/ad/20190808214526%21Logo-Snapchat.png">
+	</ul>
+
+</footer>
+
+
+<script>
+	// Fonction pour ouvrir l'onglet produit correspondant
+	function openProduct(evt, productName) {
+		// Déclarations des variables
+		var i, tabcontent, tablinks;
+		
+		// Cacher tous les éléments avec la classe "product"
+		tabcontent = document.getElementsByClassName("product");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		
+		// Supprimer la classe "active" de tous les liens d'onglets
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].classList.remove("active");
+		}
+		
+		// Afficher l'onglet produit correspondant
+		document.getElementById(productName).style.display = "block";
+		
+		// Ajouter la classe "active" au lien d'onglet sélectionné
+		evt.currentTarget.classList.add("active");
+	}
+</script>
+</body>
+</html>
